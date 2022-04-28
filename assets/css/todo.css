@@ -1,14 +1,18 @@
 @import 'reset.css';
 
 .menu, .container, .details {
-    border: var(--border);
     height: 100vh;
+}
+
+.details {
+    border: var(--border);
 }
 
 .menu {
     width: var(--menuWidth);
     border-color: #24FF00;
     flex-direction: column;
+    background-color: #F2F2F2;
 }
 
 .container {
@@ -99,3 +103,57 @@ header.menu__header__profile > div {
 }
 
 /* ------------ fim menu - header ------------- */
+
+
+/* ------- main - .container ------*/
+
+.container {
+    width: 100%;
+    height: inherit;
+    flex-direction: column;
+    background: url('/assets/images/bg-phone.jpg') center no-repeat;
+    background-size: cover;
+}
+
+.container > header,
+.container > footer {
+    height: 133px ;
+    border: solid 1px red;
+}
+
+.container > section.tasks {
+    height: calc(100vh - (133px * 2));
+}
+
+.container > header {
+    width: 100%;
+    flex-direction: column;
+    color: #fff;
+    text-shadow: 0 0 2px #333;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+.container > header > div:first-child {
+    margin-top: 2%;
+    justify-content: space-between;
+}
+
+/* tablet 
+breakpoint*/
+@media (min-width:768px){
+    .container{
+        background: url('/assets/images/bg-desktop.jpg') center no-repeat;
+        background-size: cover;
+    }
+}
+
+/* desktop */
+@media (min-width:1920px){
+    .container{
+        background: url('/assets/images/bg-tablet.jpg') center no-repeat;
+        background-size: cover;
+    }
+}
+
+/* ------- fim main - .container ------*/
