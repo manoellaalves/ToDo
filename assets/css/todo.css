@@ -139,6 +139,22 @@ header.menu__header__profile > div {
     justify-content: space-between;
 }
 
+.task {
+    width: 90%;
+    height: 60px;
+    margin: 2% 5%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: rgba(240, 240, 240, 0.9);
+    border-radius: 5px;
+}
+
+.task:hover {
+    background: rgb(240, 240, 240);
+    cursor: pointer;
+}
+
 /* tablet 
 breakpoint*/
 @media (min-width:768px){
@@ -157,3 +173,4 @@ breakpoint*/
 }
 
 /* ------- fim main - .container ------*/
+

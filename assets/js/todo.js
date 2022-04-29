@@ -1,3 +1,5 @@
+import { addTask, getAllTasks} from "./utils/domFunctions.js";
+
 const db = [
     {
         id: 1,
@@ -24,15 +26,14 @@ const db = [
         dueDate: '2022-05-06',
         reminder: '2022-05-02 10:00',
     },
-
-
 ];
 
-console.log(db[0].title);
+getAllTasks(db);
 
-const newTask = document.querySelector("#inputTxtNewText");
+// console.log(db[0].title);
 
 const form = document.querySelector("#addNewTask");
+const newTask = document.querySelector("#inputTxtNewText");
 
 form.addEventListener("submit", (e) => {
     //Form faz um favor? Não faz nada!
@@ -44,11 +45,18 @@ newTask.addEventListener("keyup", (e) => {
     e.stopPropagation();
 
     if (e.key == "Enter") {
-        alert(newTask.value);
+        if (!newTask.value) {
+            alert("Digite alguma coisa");
+        } else {
+            alert(newTask.value);
 
-        db.push({ id: Number(db.length) + 1 , title: newTask.value });
+            const d = new Date();
+            const today = `${d.getDate()}/${d.getMonth() + 1}/${d.getFullYear()}`;
 
-        newTask.value = "";
+            db.push({ 
+                id: Number(db.length) + 1 , title: newTask.value, done: false, dueDate: today, });
+            newTask.value = "";
+            console.log(db);
+        }
     }
-    console.log(e);
 });
