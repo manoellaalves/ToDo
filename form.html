@@ -31,30 +31,35 @@
                         <input type="number" min="0" max="100" step="5" class="form-control" />
                     </div>
 
-                    <div class="form-group mb-3">
-                        <label for="txtPassword" class="form-label">Senha</label>
-                        <input type="password" id="txtPassword" class="form-control" placeholder="Digite a Senha" />
-                    </div>
-
+                    
                     <div class="mb-3">
                         <button type="submit" id="btn-send" class="btn btn-primary mb-2"
-                            disabled="disabled">Login</button>
+                        disabled="disabled">Login</button>
                     </div>
-
+                    
                     <select name="carro" class="form-control">
                         <option value="1">Fiat</option>
                         <option value="2">Ford</option>
                         <option value="3" selected="selected">Chevrolet</option>
                         <option value="4">VW</option>
                     </select>
-
-                    <textarea name="message" class="form-control" cols="30" rows="10"></textarea>
-
+                    
+                    <textarea name="message" id="message" onInput="autoHeight(this)" style="overflow: hidden" class="form-control" cols="20" placeholder="Mensagem"></textarea>
+                    
+                    <div class="form-group mb-3">
+                        <label for="txtPassword" class="form-label">Senha</label>
+                        <input type="password" id="txtPassword" class="form-control" placeholder="Digite a Senha" />
+                    </div>
                 </form>
             </div>
         </div>
     </div>
     <script>
+        function autoHeight(element){
+            element.style.height = "20px";
+            element.style.height = (element.scrollHeight) + "px";
+        }
+
         const opcao = document.querySelectorAll("input[type='radio']");
         const btnSend = document.querySelector("#btn-send");
 
